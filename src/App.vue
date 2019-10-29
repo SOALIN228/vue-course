@@ -4,9 +4,11 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <transition name="fade" mode="out-in">
-      <router-view/>
-    </transition>
+    <transition-group name="fade" mode="out-in">
+      <router-view key="default"/>
+      <router-view name="tel" key="tel"/>
+      <router-view name="email" key="email"/>
+    </transition-group>
   </div>
 </template>
 

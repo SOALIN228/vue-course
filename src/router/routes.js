@@ -2,7 +2,11 @@ export default [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/Home.vue')
+    components: {
+      default: () => import('@/views/Home.vue'),
+      tel: () => import('@/views/tel.vue'),
+      email: () => import('@/views/email.vue')
+    }
   },
   {
     path: '/login',
