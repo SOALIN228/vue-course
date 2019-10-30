@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { getUserInfo } from '@/api/user'
+
 export default {
   watch: {
     '$route' (to, from) {
@@ -29,6 +31,11 @@ export default {
     appNameVersion () {
       return this.$store.getters.appNameVersion
     }
+  },
+  mounted () {
+    getUserInfo({ userId: 21 }).then(res => {
+      console.log(res)
+    })
   },
   methods: {
     handleChangeAppName () {
