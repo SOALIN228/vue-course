@@ -4,6 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <p><i>{{appName}}</i></p>
+    <p><i>{{appNameVersion}}</i></p>
+    <button @click="handleChangeAppName">appName切换</button>
     <transition-group name="fade" mode="out-in">
       <router-view key="default"/>
       <router-view name="tel" key="tel"/>
@@ -17,6 +20,20 @@ export default {
   watch: {
     '$route' (to, from) {
       // 可以根据params 或query 获取到要展示的动效名
+    }
+  },
+  computed: {
+    appName () {
+      return this.$store.state.appName
+    },
+    appNameVersion () {
+      return this.$store.getters.appNameVersion
+    }
+  },
+  methods: {
+    handleChangeAppName () {
+      // this.$store.commit('SET_APP_NAME', { newName: 'Vuex' })
+      this.$store.dispatch('updateAppName', { newName: 'VuexAction' })
     }
   }
 }
