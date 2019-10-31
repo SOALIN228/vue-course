@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CountUp from '../components/countUp'
+import CountUp from '_c/count-up'
 
 export default {
   name: 'Count',

@@ -24,6 +24,11 @@ export default [
     component: () => import('@/views/Count.vue')
   },
   {
+    path: '/split',
+    name: 'split',
+    component: () => import('@/views/Split.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/Error404.vue')
   }
