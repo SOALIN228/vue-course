@@ -19,6 +19,11 @@ export default [
     component: () => import('@/views/About.vue')
   },
   {
+    path: '/count',
+    name: 'count',
+    component: () => import('@/views/Count.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/Error404.vue')
   }
