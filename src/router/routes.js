@@ -29,6 +29,11 @@ export default [
     component: () => import('@/views/Split.vue')
   },
   {
+    path: '/menuPage',
+    name: 'menuPage',
+    component: () => import('@/views/MenuPage.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/Error404.vue')
   }
