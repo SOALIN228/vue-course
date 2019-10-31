@@ -4,14 +4,14 @@ export default [
     name: 'home',
     components: {
       default: () => import('@/views/Home.vue'),
-      tel: () => import('@/views/tel.vue'),
-      email: () => import('@/views/email.vue')
+      tel: () => import('@/views/Tel.vue'),
+      email: () => import('@/views/Email.vue')
     }
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login.vue')
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '/about',
@@ -20,6 +20,6 @@ export default [
   },
   {
     path: '*',
-    component: () => import('@/views/errer_404.vue')
+    component: () => import('@/views/Error404.vue')
   }
 ]

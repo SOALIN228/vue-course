@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'tel',
+  name: 'Tel',
   data () {
     return {
       value: ''

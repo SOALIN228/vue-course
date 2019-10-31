@@ -1,10 +1,10 @@
 <template>
-  <div>login page</div>
+  <div>404</div>
 </template>
 
 <script>
 export default {
-  name: 'login',
+  name: 'Error404',
   data () {
     return {}
   }
