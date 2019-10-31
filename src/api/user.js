@@ -8,9 +8,15 @@ export const getUserInfo = ({ userId }) => {
       userId
     }
   }).then(res => { // 调用成功时操作
-    console.log(res)
-  }).catch(error => { // 调用失败时操作
-    console.log(error)
-    // 可以返回失败数据
+    return new Promise(function (resolve, reject) {
+      if (res.status === 200) {
+        resolve(res)
+      } else {
+        reject(new Error('没有成功获取到数据!'))
+      }
+    }).catch(err => {
+      console.log(err)
+      return []
+    })
   })
 }

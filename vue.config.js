@@ -12,6 +12,6 @@ module.exports = {
   },
   productionSourceMap: false, // 打包不生成 .map
   devServer: {
-    proxy: 'http://localhost:4000'
+    proxy: 'http://localhost:3000'
   }
 }
