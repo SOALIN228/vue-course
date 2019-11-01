@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { getUserInfo } from '@/api/user'
+// import { getUserInfo } from '@/api/user'
 
 export default {
   watch: {
@@ -33,9 +33,9 @@ export default {
     }
   },
   mounted () {
-    getUserInfo({ userId: 21 }).then(res => {
-      console.log(res)
-    })
+    // getUserInfo({ userId: 21 }).then(res => {
+    //   console.log(res)
+    // })
   },
   methods: {
     handleChangeAppName () {

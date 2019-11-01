@@ -1,12 +1,25 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/img/logo.png">
+    <button @click="handleLogout">退出登录</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  methods: {
+    ...mapActions([
+      'logout'
+    ]),
+    handleLogout () {
+      this.logout()
+      this.$router.push({
+        name: 'login'
+      })
+    }
+  }
 }
 </script>
