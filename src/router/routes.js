@@ -1,13 +1,28 @@
+import Home from '@/views/Home.vue'
+import Layout from '@/views/LayoutPage.vue'
+
 export default [
   {
     path: '/',
     name: 'home',
-    components: {
-      default: () => import('@/views/Home.vue'),
-      tel: () => import('@/views/Tel.vue'),
-      email: () => import('@/views/Email.vue')
-    }
+    component: Layout,
+    children: [
+      {
+        path: 'home',
+        component: Home
+      }
+    ]
   },
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   // components: {
+  //   //   default: () => import('@/views/Home.vue'),
+  //   //   tel: () => import('@/views/Tel.vue'),
+  //   //   email: () => import('@/views/Email.vue')
+  //   // }
+  //   component: Layout
+  // },
   {
     path: '/login',
     name: 'login',

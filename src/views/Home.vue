@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/img/logo.png">
     <button @click="handleLogout">退出登录</button>
   </div>
 </template>

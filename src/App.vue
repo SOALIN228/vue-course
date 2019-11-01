@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <p><i>{{appName}}</i></p>
-    <p><i>{{appNameVersion}}</i></p>
-    <button @click="handleChangeAppName">appName切换</button>
-    <transition-group name="fade" mode="out-in">
-      <router-view key="default"/>
-      <router-view name="tel" key="tel"/>
-      <router-view name="email" key="email"/>
-    </transition-group>
+    <!--    <div id="nav">-->
+    <!--      <router-link to="/">Home</router-link> |-->
+    <!--      <router-link to="/about">About</router-link>-->
+    <!--    </div>-->
+    <!--    <p><i>{{appName}}</i></p>-->
+    <!--    <p><i>{{appNameVersion}}</i></p>-->
+    <!--    <button @click="handleChangeAppName">appName切换</button>-->
+<!--    <transition-group name="fade" mode="out-in">-->
+<!--      <router-view key="default"/>-->
+<!--      <router-view name="tel" key="tel"/>-->
+<!--      <router-view name="email" key="email"/>-->
+<!--    </transition-group>-->
+<!--    <transition name="fade" mode="out-in">-->
+    <router-view/>
+<!--    </transition>-->
   </div>
 </template>
 
@@ -47,6 +50,14 @@ export default {
 </script>
 
 <style lang="scss">
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
   .fade-enter,
   .fade-leave-to {
     opacity: 0;
@@ -66,8 +77,8 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
+    height: 100%;
   }
 
   #nav {
