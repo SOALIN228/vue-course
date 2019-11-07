@@ -1,3 +1,6 @@
-export default {
-  // 业务无关代码
+export const doCustomTimes = (times, callback) => {
+  let i = -1
+  while (++i < times) {
+    callback()
+  }
 }

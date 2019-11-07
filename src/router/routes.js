@@ -1,15 +1,16 @@
-import Home from '@/views/Home.vue'
-import Layout from '@/views/LayoutPage.vue'
-
 export default [
   {
     path: '/',
     name: 'home',
-    component: Layout,
+    component: () => import('@/views/LayoutPage.vue'),
     children: [
       {
         path: 'home',
-        component: Home
+        component: () => import('@/views/Home.vue')
+      },
+      {
+        path: 'table',
+        component: () => import('@/views/Table.vue')
       }
     ]
   },
