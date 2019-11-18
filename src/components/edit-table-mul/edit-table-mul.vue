@@ -18,9 +18,7 @@ export default {
   data () {
     return {
       insideData: [],
-      insideColumns: [],
-      edittingId: '',
-      edittingContent: ''
+      insideColumns: []
     }
   },
   watch: {
