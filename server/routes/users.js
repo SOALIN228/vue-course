@@ -18,7 +18,7 @@ router.get('/authorization', (req, res, next) => {
     mes: 'success',
     data: {
       token: jwt.sign({ name: userName }, 'soalin', {
-        expiresIn: 10
+        expiresIn: 24 * 60 * 60 * 1000
       })
     }
   })
