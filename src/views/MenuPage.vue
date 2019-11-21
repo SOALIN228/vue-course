@@ -10,9 +10,8 @@
 </template>
 
 <script>
-import menuComponents from '_c/menu'
+import { NMenu, NMenuItem, NReSubmenu } from '_c/menu'
 
-const { NMenu, NMenuItem, NReSubmenu } = menuComponents
 export default {
   name: 'MenuPage',
   components: {
