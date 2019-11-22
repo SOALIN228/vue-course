@@ -25,6 +25,7 @@ export default {
       folderTree: [],
       currentRenamingId: '',
       currentRenamingContent: '',
+      inputTag: false,
       renderFunc: (h, { root, node, data }) => {
         const dropList = data.type === 'folder' ? this.folderDrop : this.fileDrop
         const dropdownRender = dropList.map(item => {
@@ -39,7 +40,7 @@ export default {
                 <i-input value={data.title} on-input={this.handleInput} class="tree-rename-input"></i-input>
                 <i-button size="small" type="text" on-click={this.saveRename.bind(this, data)}><icon
                   type="md-checkmark"/></i-button>
-                <i-button size="small" type="text"><icon type="md-close"/></i-button>
+                <i-button size="small" type="text" on-click={() => this.closeRename()}><icon type="md-close"/></i-button>
               </span> : <span>{data.title}</span>
             }
             {
@@ -93,6 +94,7 @@ export default {
       }
     },
     handleInput (value) {
+      this.inputTag = true
       this.currentRenamingContent = value
     },
     handleDelete (data) {
@@ -103,7 +105,7 @@ export default {
       list = list.filter(item => item.id !== data.id)
       this.$emit(`update:${updateListName}`, list)
       this.$nextTick(() => {
-        expandSpecifiedFolder(this.folderTree, folderId)
+        expandSpecifiedFolder(this, this.folderTree, folderId)
       })
     },
     updateList (list, id) {
@@ -122,13 +124,20 @@ export default {
     saveRename (data) {
       const id = data.id
       const type = data.type
-      if (type === 'folder') {
-        const list = this.updateList(JSON.parse(JSON.stringify(this.folderList)), id)
-        this.$emit('update:folderList', list)
-      } else {
-        const list = this.updateList(this.fileList, id)
-        this.$emit('update:fileList', list)
+      if (this.inputTag) {
+        if (type === 'folder') {
+          const list = this.updateList(this.folderList, id)
+          this.$emit('update:folderList', list)
+        } else {
+          const list = this.updateList(this.fileList, id)
+          this.$emit('update:fileList', list)
+        }
       }
+      this.inputTag = false
+      this.currentRenamingId = ''
+    },
+    closeRename () {
+      this.inputTag = false
       this.currentRenamingId = ''
     }
   }
