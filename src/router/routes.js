@@ -1,20 +1,29 @@
-export default [
+export const routerMap = [
   {
     path: '/',
     name: 'home',
     redirect: '/home',
     component: () => import('@/views/LayoutPage.vue'),
+    meta: {
+      title: '首页'
+    },
     children: [
       {
         path: 'home',
+        name: 'home_index',
+        meta: {
+          title: '首页'
+        },
         component: () => import('@/views/Home.vue')
       },
       {
         path: 'table',
+        name: 'table_page',
         component: () => import('@/views/Table.vue')
       },
       {
         path: 'folder-tree',
+        name: 'folder_tree',
         component: () => import('@/views/FolderTree.vue')
       }
     ]
@@ -29,11 +38,6 @@ export default [
   //   // }
   //   component: Layout
   // },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/Login.vue')
-  },
   {
     path: '/about',
     name: 'about',
@@ -50,9 +54,17 @@ export default [
     component: () => import('@/views/Split.vue')
   },
   {
-    path: '/menuPage',
-    name: 'menuPage',
+    path: '/menu-page',
+    name: 'menu_page',
     component: () => import('@/views/MenuPage.vue')
+  }
+]
+
+export const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '*',

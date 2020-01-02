@@ -23,7 +23,7 @@ const actions = {
           reject(new Error('token 获取失败'))
         } else {
           setToken(res.data.token) // 重新设置token，续命
-          resolve()
+          resolve(res.data.rules.page)
         }
       }).catch(err => {
         reject(err)

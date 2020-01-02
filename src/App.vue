@@ -4,9 +4,9 @@
     <!--      <router-link to="/">Home</router-link> |-->
     <!--      <router-link to="/about">About</router-link>-->
     <!--    </div>-->
-    <!--    <p><i>{{appName}}</i></p>-->
-    <!--    <p><i>{{appNameVersion}}</i></p>-->
-    <!--    <button @click="handleChangeAppName">appName切换</button>-->
+<!--        <p><i>{{appName}}</i></p>-->
+<!--        <p><i>{{appNameVersion}}</i></p>-->
+<!--        <button @click="handleChangeAppName">appName切换</button>-->
 <!--    <transition-group name="fade" mode="out-in">-->
 <!--      <router-view key="default"/>-->
 <!--      <router-view name="tel" key="tel"/>-->
